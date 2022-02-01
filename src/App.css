@@ -2,6 +2,30 @@
   text-align: center;
 }
 
+.navBar-list{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  list-style: none;
+}
+.cont-img{
+  border-bottom: 1px solid #ccc;
+}
+.cont-img--cfg{
+  width: 100%;
+  max-height: 64px;
+  object-fit: contain;
+
+}
+
+.navBar-list__item a{
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+ 
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
