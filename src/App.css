@@ -1,12 +1,28 @@
 .App {
   text-align: center;
 }
+.btn-cart{
+  height: auto;
+  cursor: pointer;
+  background: none;
+  border:none;
+}
 
+.btn-cart__img{
+ width: 100%;
+ max-height: 2rem;
+}
+
+.content-navBar{
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
 .navBar-list{
   display: flex;
   justify-content: space-between;
   padding: 0 1rem;
   text-transform: uppercase;
+  width: 100%;
   list-style: none;
 }
 .cont-img{

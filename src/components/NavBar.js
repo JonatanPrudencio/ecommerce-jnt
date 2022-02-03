@@ -1,4 +1,5 @@
 import logo from '../images/JNT LOGO.png'
+import CardWidge from './CardWidge';
 
 const NavBar = () =>{
 return(
@@ -16,8 +17,16 @@ return(
                 <li className= "navBar-list__item"><a href ="#">Contacto</a></li>
                 <li className= "navBar-list__item"><a href ="#">Preguntas frecuentes</a></li>
             </ul>
+
+            <CardWidge />
         </div>
+
+
+    
+       
     </div>
+
+     
 );
 
 }
