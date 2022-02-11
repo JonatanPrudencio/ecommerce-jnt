@@ -7,6 +7,17 @@
   background: none;
   border:none;
 }
+.grid-products{
+  text-align: center;
+  gap: 1rem;
+  display: grid;
+  margin-bottom: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-products article{
+  background-color: #ccc;
+}
 .content-add{
   display: flex;
   margin-left: 1rem;
