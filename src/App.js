@@ -1,8 +1,11 @@
 import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemCount from './components/ItemCount';
+import ItemDetailContainer from './components/ItemDetailContainer';
+
 
 
 function App() {
@@ -10,9 +13,11 @@ function App() {
     <>
       <NavBar />
 
-      <ItemListContainer title = "Productos Destacados" />
+    <ItemDetailContainer />
 
-      <ItemCount />
+      {/* <ItemListContainer title = "Productos Destacados" /> */}
+
+      
 
     {/* <div className="App">
       <header className="App-header">

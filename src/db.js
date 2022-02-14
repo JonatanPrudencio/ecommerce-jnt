@@ -4,7 +4,7 @@ export const list = [{
     precio: 1500,
     stock: 4,
     descripcion: "una descripcion de una remera",
-    imagen: "images/img1.jpg"
+    imagen:require("./images/img1.jpg")
     
     },{
     id: "02",
@@ -12,7 +12,7 @@ export const list = [{
     precio: 1600,
     stock: 4,
     descripcion: "una descripcion de una remera 2",
-    imagen: "./images/img2.jpg"
+    imagen:require("./images/img2.jpg")
     
     }, {
     id: "03",  
@@ -20,14 +20,14 @@ export const list = [{
     precio: 1700,
     stock: 4,
     descripcion: "una descripcion de una remera 3",
-    imagen: "./images/img3.jpg"
+    imagen:require("./images/img3.jpg")
     },{
     id:  "04",
     titulo: "Remera 4",
     precio: 1500,
     stock: 4,
     descripcion: "una descripcion de una remera 4",
-    imagen: "./images/img4.jpg"
+    imagen:require("./images/img4.jpg")
     
     },
     {
@@ -36,7 +36,7 @@ export const list = [{
         precio: 2500,
         stock: 4,
         descripcion: "una descripcion de una remera 5",
-        imagen: "./images/img5.jpg" 
+        imagen:require("./images/img5.jpg")
     }
 
     ,
@@ -46,7 +46,7 @@ export const list = [{
         precio: 3500,
         stock: 4,
         descripcion: "una descripcion de una remera 6",
-        imagen: "./images/img6.jpg" 
+        imagen:require("./images/img6.jpg")
     }
 
     ,
@@ -56,7 +56,7 @@ export const list = [{
         precio: 2500,
         stock: 4,
         descripcion: "una descripcion de una remera 7",
-        imagen: "./images/img7.jpg" 
+        imagen:require("./images/img7.jpg")
     }
 
     ,
@@ -66,7 +66,7 @@ export const list = [{
         precio: 1500,
         stock: 4,
         descripcion: "una descripcion de una remera 8",
-        imagen: "./images/img8.jpg" 
+        imagen:require("./images/img8.jpg")
     }
 
     ,
@@ -76,7 +76,7 @@ export const list = [{
         precio: 1500,
         stock: 4,
         descripcion: "una descripcion de una remera 9",
-        imagen: "./images/img9.jpg" 
+        imagen:require("./images/img9.jpg") 
     }
 
 
