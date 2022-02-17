@@ -1,40 +1,52 @@
 import logo from './logo.svg';
+import { BrowserRouter, Route , Routes , Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import NavBar from './components/NavBar';
+
 import ItemListContainer from './components/ItemListContainer';
 import ItemCount from './components/ItemCount';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import Footer from './components/Footer';
 
 
 
 function App() {
   return (
     <>
-      <NavBar />
+    <BrowserRouter>
+    
+    <NavBar />
 
-    <ItemDetailContainer />
+    <Routes>
 
-      {/* <ItemListContainer title = "Productos Destacados" /> */}
+      <Route path='/' element={<ItemListContainer title = "Productos" />}
+       
+        
+       />
+
+      <Route path='/item/:idProd' element={<ItemDetailContainer />}
+      
+      />
+
+    <Route path='/category/:idCategory' element={<ItemListContainer />}
+      
+      />
+    
+
+     
+    
+
+ 
+
+    </Routes>
+
+    
+    
+    </BrowserRouter>
+    
 
       
-
-    {/* <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div> */}
 
     </>
   );

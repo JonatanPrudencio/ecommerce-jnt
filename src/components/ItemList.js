@@ -13,7 +13,8 @@ export default function ItemList({ lista }){
           <>
 
         <Item
-          key={item.id}
+          id={item.id}
+          stock={item.stock}
           titulo={item.titulo}
           precio={item.precio}
           descripcion={item.descripcion}

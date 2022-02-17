@@ -2,26 +2,48 @@ import { useEffect, useState } from "react";
 import Item from "./Item";
 import ItemList from "./ItemList";
 import { list, getList } from "../db";
+import { useParams } from "react-router-dom";
+import { customFetch } from "../utils/customFetch";
 
 
 export default function ItemListContainer (prop){
 
 const [items, setItems] = useState([]);
+
+const {idCategory} = useParams();
+
+console.log(idCategory);
+
+
   const [loading, setLoading] = useState(true);
 
-    useEffect(async () => {
-        setLoading(true);
-        
-        try {
-          const data = await getList(list, 2000);
-          console.log(data);
-          setItems(data);
-          setLoading(false);
-        } catch (e) {
-          
-        }
-      }, []);
+  useEffect(() => {
+    
+    
+    
 
+      if(idCategory === undefined){
+
+        customFetch(1000, list)
+        .then(result => setItems(result))
+        .catch(err => console.log(err)) 
+
+      }
+
+      else{
+
+        customFetch(1000, list.filter(item => item.categoryId === parseInt(idCategory)))
+  
+        .then(result => setItems(result))
+        .catch(err => console.log(err)) 
+     
+      }
+
+      
+    
+    }, [idCategory]);
+
+   
     return (
       
       
@@ -29,9 +51,9 @@ const [items, setItems] = useState([]);
         <div>
 
 
-        <h2>{prop.title}</h2>
+        <h2 className="title-i">{prop.title}</h2>
 
-        <div className="grid-products">
+        <div className="grid-products container">
         <ItemList lista={items} />
         </div>
 

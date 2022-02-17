@@ -1,27 +1,11 @@
 import ItemCount from "./ItemCount";
+import ItemDetailContainer from "./ItemDetailContainer";
+
 
 export default function ItemDetail({item}){
 
     return (
         <>
-
-    {/* <div className="cont-product">
-            
-            <div className="cont-product__img">
-                <img className= "cont-product__img--prod" src={item.imagen} alt={item.descripcion} />
-            </div>
-
-            <div className="cont-product__descrip">
-            <h2>{item.titulo}</h2>
-            <h4>{item.precio}</h4>
-            </div>
-            
-        </div>
-        
-      
-
-
-         */}
 
          <section className="container sproduct  pt-5">
              <div className="row container--border">
@@ -37,7 +21,7 @@ export default function ItemDetail({item}){
                     <h3 className="py-4 font--7">{item.titulo}</h3>
                     <span>{item.precio}</span>
 
-                    <select class="my-3 select--color">
+                    <select className="my-3 select--color">
                <option>Selecciona Talle</option>
                <option>S</option>
                <option>M</option>
@@ -45,9 +29,9 @@ export default function ItemDetail({item}){
                <option>XL</option>
                 </select>
 
-                <div class="product-des">
+                <div className="product-des">
 
-               <h4 class="mt-5 mb-5 font--7">Descripción del producto</h4>
+               <h4 className="mt-5 mb-5 font--7">Descripción del producto</h4>
 
            <span>{item.descripcion}</span>
 
