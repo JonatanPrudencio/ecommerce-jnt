@@ -12,7 +12,6 @@ const [items, setItems] = useState([]);
 
 const {idCategory} = useParams();
 
-console.log(idCategory);
 
 
   const [loading, setLoading] = useState(true);

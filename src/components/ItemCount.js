@@ -1,8 +1,16 @@
 import { useEffect , useState } from "react";
+import ItemDetail from "./ItemDetail";
 
-const ItemCount = ()=>{
-    const stock=20;
-    const [quantity,setQuantity]= useState(1);
+
+const ItemCount = ({stock = 0, initial = 1 , onAdd})=>{
+    const [quantity,setQuantity]= useState(0);
+
+    useEffect(() => {
+        setQuantity(initial);
+       
+      },[]);
+   
+    
     
     const increment=()=>{
         if(quantity<stock){
@@ -11,22 +19,23 @@ const ItemCount = ()=>{
         
     }
     const reduce=()=>{
-        if(quantity>1){
+        if(quantity>initial+1){
             setQuantity(quantity-1);
         }
         
     }
 
-    const quantityAdd=()=>{
-        alert('La cantidad agregada fue de: ' + quantity) 
-        
-    }
+    // const quantityAdd=()=>{
+    //     alert('La cantidad agregada fue de: ' + quantity) 
+    //     setQuantity(quantity);
+    // }
 
-
-    useEffect(() => {
-      console.log('actualizacion') 
+   
+   
+    // useEffect(() => {
+    //   console.log('actualizacion') 
      
-    },[quantity]);
+    // },[quantity]);
     return(
         <>
         <div className="content-add">
@@ -35,7 +44,16 @@ const ItemCount = ()=>{
                 <p>{quantity}</p>
                 <button onClick={increment}>+</button>
             </div>
-            <button className="quantityAdd-button" onClick ={quantityAdd}>Agregar</button>
+            {
+                stock && quantity
+
+                ? <button className="quantityAdd-button" onClick={() => onAdd(quantity)}>Agregar</button> 
+                : <button disabled>Agregar</button>
+            }
+              
+
+                
+            
         </div>
         
         </>

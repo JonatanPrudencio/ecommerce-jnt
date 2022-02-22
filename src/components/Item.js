@@ -7,7 +7,7 @@ export default function Item({id, titulo, imagen, precio, descripcion}){
         <div className="cont-product">
             
             <div className="cont-product__img">
-                 <div class="product__link">
+                 <div className="product__link">
 						<Link to={'/item/' + id} className='shop__btn'>Ver producto</Link>
                        
                 </div>

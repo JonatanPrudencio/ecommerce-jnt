@@ -1,12 +1,27 @@
+import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
+import { useEffect , useState } from "react";
 import ItemDetailContainer from "./ItemDetailContainer";
+
+
 
 
 export default function ItemDetail({item}){
 
+    const [itemCount, setItemCount] = useState(0);
+    
+    const onAdd = (qty) =>{
+        alert("Se agregaron " + qty + " items");
+        setItemCount(qty);
+        
+    }
+     
+
     return (
         <>
+        
 
+        
          <section className="container sproduct  pt-5">
              <div className="row container--border">
 
@@ -37,7 +52,19 @@ export default function ItemDetail({item}){
 
            </div>
 
-           <ItemCount />
+          
+          
+             {
+
+             
+            itemCount === 0
+            ? <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd} 
+            />
+            : <Link to='/cart' style={{textDecoration: "none"}}><button className="quantityAdd-button">checkout</button></Link>
+                 }
+        
+    
+         
 
             
                 </div>
@@ -45,8 +72,8 @@ export default function ItemDetail({item}){
              </div>
 
          </section>
-        
-
+       
+               
         </>
     )
 }

@@ -8,6 +8,7 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemCount from './components/ItemCount';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Footer from './components/Footer';
+import Cart from './components/Cart';
 
 
 
@@ -32,6 +33,10 @@ function App() {
     <Route path='/category/:idCategory' element={<ItemListContainer />}
       
       />
+
+<Route path='/cart' element={<Cart />}
+      
+      />  
     
 
      
