@@ -25,17 +25,6 @@ const ItemCount = ({stock = 0, initial = 1 , onAdd})=>{
         
     }
 
-    // const quantityAdd=()=>{
-    //     alert('La cantidad agregada fue de: ' + quantity) 
-    //     setQuantity(quantity);
-    // }
-
-   
-   
-    // useEffect(() => {
-    //   console.log('actualizacion') 
-     
-    // },[quantity]);
     return(
         <>
         <div className="content-add">

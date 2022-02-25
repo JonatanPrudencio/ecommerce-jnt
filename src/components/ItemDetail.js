@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
-import { useEffect , useState } from "react";
+import { useContext, useEffect , useState } from "react";
 import ItemDetailContainer from "./ItemDetailContainer";
+import { CartContext } from "./CartContext";
 
 
 
@@ -9,11 +10,13 @@ import ItemDetailContainer from "./ItemDetailContainer";
 export default function ItemDetail({item}){
 
     const [itemCount, setItemCount] = useState(0);
+
+    const test = useContext(CartContext);
     
     const onAdd = (qty) =>{
         alert("Se agregaron " + qty + " items");
         setItemCount(qty);
-        
+        test.addItem(item, qty);
     }
      
 

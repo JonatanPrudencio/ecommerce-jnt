@@ -183,6 +183,21 @@
   font-size: 1.5rem;
 }
 
+.cont-title__cart{
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.cont-item__cart{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
 .quantityAdd-button{
   background-color: #000;
   color: #fff;

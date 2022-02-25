@@ -10,39 +10,28 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import Footer from './components/Footer';
 import Cart from './components/Cart';
 
-
+import CartContextProvider from './components/CartContext';
 
 function App() {
   return (
     <>
+    <CartContextProvider>
+
+    
     <BrowserRouter>
     
     <NavBar />
 
     <Routes>
 
-      <Route path='/' element={<ItemListContainer title = "Productos" />}
-       
-        
-       />
+    <Route path='/' element={<ItemListContainer title = "Productos" />}/>
 
-      <Route path='/item/:idProd' element={<ItemDetailContainer />}
-      
-      />
+    <Route path='/item/:idProd' element={<ItemDetailContainer />}/>
 
-    <Route path='/category/:idCategory' element={<ItemListContainer />}
-      
-      />
+    <Route path='/category/:idCategory' element={<ItemListContainer />}/>
 
-<Route path='/cart' element={<Cart />}
-      
-      />  
+    <Route path='/cart' element={<Cart />}/>  
     
-
-     
-    
-
- 
 
     </Routes>
 
@@ -51,7 +40,7 @@ function App() {
     </BrowserRouter>
     
 
-      
+    </CartContextProvider>
 
     </>
   );
