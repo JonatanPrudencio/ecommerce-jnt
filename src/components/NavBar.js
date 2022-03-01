@@ -7,7 +7,9 @@ const NavBar = () =>{
 return(
     <div className = "head-navBar">
 
-        <div className='head-navBar__top'>
+        <div className='head-navBar__top--border'>
+
+        <div className='head-navBar__top container'>
         <SearchForm />
 
         <div className = "cont-img">
@@ -18,6 +20,9 @@ return(
             <CardWidge />
 
         </div>
+
+        </div>
+        
 
         
 

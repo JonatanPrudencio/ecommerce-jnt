@@ -50,10 +50,26 @@ const CartContextProvider = ({children}) =>{
        
         setCartList(cartList.filter((item) => item.id !== id));
       };
+
+    const calcQtyItems = () =>{
+        let qtys = cartList.map(item => item.qty);
+        return qtys.reduce(((previousValue, currentValue) => previousValue + currentValue),0);
+        }  
+
+
+        const calcTotalPorItem= (id) =>{
+            let index = cartList.map(item => item.id).indexOf(id);
+            return cartList[index].precio * cartList[index].qty;
+            }  
+
+        const calcSubtotal= () =>{
+            let totalPerItem = cartList.map(item => calcTotalPorItem(item.id));
+            return totalPerItem.reduce(((previousValue, currentValue) => previousValue + currentValue),0);
+            }  
     return(
         
         
-        <CartContext.Provider value={{cartList, addItem, removeItem, clearList}}>
+        <CartContext.Provider value={{cartList, addItem, removeItem, clearList, calcQtyItems, calcSubtotal}}>
             {children}
         </CartContext.Provider>
         
