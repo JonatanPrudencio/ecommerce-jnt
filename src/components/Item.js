@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { list, getList } from "../db";
+
 
 export default function Item({id, titulo, imagen, precio, descripcion}){
     return(

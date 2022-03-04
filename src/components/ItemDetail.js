@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { useContext, useEffect , useState } from "react";
-import ItemDetailContainer from "./ItemDetailContainer";
+
 import { CartContext } from "./CartContext";
 
 
