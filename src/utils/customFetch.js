@@ -45,7 +45,7 @@ export const firestoreFetchFind = async (dato) =>{
 
     if (docSnap.exists()) {
         console.log(docSnap.data());
-     return [{ id: docSnap.id,...docSnap.data()}] 
+     return { id: docSnap.id,...docSnap.data()}
     } else {
     // doc.data() will be undefined in this case
     console.log("No such document!");

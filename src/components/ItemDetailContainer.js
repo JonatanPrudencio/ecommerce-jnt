@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { customFetch } from "../utils/customFetch";
+
 import { firestoreFetch, firestoreFetchFind } from "../utils/customFetch";
 
 import ItemDetail from "./ItemDetail";

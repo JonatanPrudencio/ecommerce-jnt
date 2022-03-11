@@ -15,8 +15,15 @@ export default function Item({id, titulo, imagen, precio, descripcion}){
             </div>
 
             <div className="cont-product__descrip">
-            <h2>{titulo}</h2>
-            <h4>{precio}</h4>
+                <div>
+                <p className="cont-product__descrip--cfg">{titulo}</p>
+                </div>
+
+                <div>
+                <p className="cont-product__descrip--precio">{'$ '+ precio}</p>
+                </div>
+            
+            
             </div>
             
         </div>
