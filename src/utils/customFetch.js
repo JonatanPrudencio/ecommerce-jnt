@@ -44,7 +44,7 @@ export const firestoreFetchFind = async (dato) =>{
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-        console.log(docSnap.data());
+        // console.log(docSnap.data());
      return { id: docSnap.id,...docSnap.data()}
     } else {
     // doc.data() will be undefined in this case

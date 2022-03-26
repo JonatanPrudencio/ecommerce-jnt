@@ -3,6 +3,7 @@ import { BrowserRouter, Route , Routes , Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import NavBar from './components/NavBar';
+import swal from 'sweetalert';
 
 import ItemListContainer from './components/ItemListContainer';
 import ItemCount from './components/ItemCount';
@@ -11,6 +12,7 @@ import Footer from './components/Footer';
 import Cart from './components/Cart';
 
 import CartContextProvider from './components/CartContext';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -22,9 +24,13 @@ function App() {
     
     <NavBar />
 
+   
+
     <Routes>
 
-    <Route path='/' element={<ItemListContainer title = "Productos" />}/>
+    <Route path='/' element={<Home />}/>
+
+    <Route path='/product' element={<ItemListContainer title = "Productos" />}/>
 
     <Route path='/item/:idProd' element={<ItemDetailContainer />}/>
 
@@ -36,7 +42,7 @@ function App() {
     </Routes>
 
     
-    
+    <Footer />
     </BrowserRouter>
     
 

@@ -37,7 +37,7 @@ export default function ItemDetail({item}){
                 <div className="description col-lg-6 col-md-6 col-12">
 
                     <h3 className="py-4 font--7">{item.titulo}</h3>
-                    <span>{item.precio}</span>
+                    <span>{"$ "+ item.precio}</span>
 
                     <select className="my-3 select--color">
                <option>Selecciona Talle</option>

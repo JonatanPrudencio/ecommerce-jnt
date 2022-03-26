@@ -1,6 +1,6 @@
 import logo from '../images/JNT LOGO.png'
 import CardWidge from './CardWidge';
-import { BrowserRouter, Route , Routes , Link } from 'react-router-dom';
+import {Link } from 'react-router-dom';
 import SearchForm from './SearchForm';
 
 const NavBar = () =>{

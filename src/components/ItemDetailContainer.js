@@ -15,7 +15,7 @@ const ItemDetailContainer = () =>{
     const [dato, setDato] = useState([]);
 
     const {idProd} = useParams();
-    console.log(idProd);
+    // console.log(idProd);
 
     useEffect(() => {
 
@@ -25,7 +25,7 @@ const ItemDetailContainer = () =>{
         
     }, [idProd]);
 
-    console.log(dato);
+    // console.log(dato);
 
     return (
         <>

@@ -3,23 +3,40 @@ import { CartContext } from "./CartContext";
 import { Link } from 'react-router-dom';
 import db from "../utils/firebaseConfig";
 import { async } from "@firebase/util";
+import { useEffect , useState } from "react";
+import swal from "sweetalert";
 
 import { collection, doc, increment, serverTimestamp, setDoc, updateDoc } from "firebase/firestore";
 
 const Cart =() =>{
-
-    const test = useContext(CartContext);
     
-    console.log(test);
+    const test = useContext(CartContext);
+
+    
+    const [informacion,setInformacion] = useState({
+        email:'',
+        name:'',
+        phone:''
+    });
+    const handleInputChange = (event) =>{
+        setInformacion({
+            ...informacion,
+            [event.target.name]: event.target.value
+        });
+    }
+    
+
+
+
+     
+
+    
+    // console.log(test);
 
 
     const createOrder = () =>{
         let order = {
-            buyer :{
-                email: "jona.prudencio14@hotmail.com",
-                name: "Jonatan Prudencio",
-                phone: "1554940493"
-            },
+            buyer : informacion,
             items: test.cartList.map((item)=>{
                 return {
                     id: item.id, 
@@ -41,7 +58,7 @@ const Cart =() =>{
             return newOrderRef;
         }
 
-        createOrderInFirestore().then(result => {alert('Tu pedido fue creado con exito: '+ result.id);
+        createOrderInFirestore().then(result => {swal('Tu pedido fue creado con exito: '+ result.id);
                                                 test.cartList.map(async (item) => {
                                                     const itemRef = doc(db,"list",item.id);
                                                     await updateDoc(itemRef,{
@@ -58,7 +75,7 @@ const Cart =() =>{
     return(
         <>
 
-
+        
             
 
         {
@@ -83,12 +100,34 @@ const Cart =() =>{
                 <button className="btn--cart" onClick={()=> test.clearList()}>Borrar todos los productos</button>
                 </div>
 
+                
+
                 <div className="checkout">
+
+                <div className="checkout__data">
+                    <label for="emailUser">Email</label>
+
+                  
+                    <input name="email" id="emailUser" placeholder="Ingresa email" className="checkout__data-input" onChange={handleInputChange}></input>
+                    <label for="nameUser">Nombre completo</label>
+                    <input name="name" id="nameUser" placeholder="Ingresa nombre" className="checkout__data-input" onChange={handleInputChange}></input>
+                    <label for="numberUser">Número de telefono</label>
+                    <input name="phone" id="numberUser" placeholder="Ingresa tefelono" className="checkout__data-input" onChange={handleInputChange}></input>
+                </div>
                     <h3 className="checkout__title">Resumen de compra</h3>
                     <span>{"Cantidad de items: " + test.calcQtyItems()}</span>
                     <span><b>SUBTOTAL:</b>{" $" + test.calcSubtotal()}</span>
                     <span><b>TOTAL:</b>{" $" + test.calcSubtotal()}</span>
-                    <button onClick={createOrder} className="btn--cart">FINALIZAR COMPRA</button>
+
+                    {/* <button onClick={createOrder} className="btn--cart">FINALIZAR COMPRA</button> */}
+
+                    {
+               informacion.email !== '' && informacion.name !== '' && informacion.phone !== ''
+
+                ? <button onClick={createOrder} className="btn--cart">FINALIZAR COMPRA</button>
+                : <button disabled>FINALIZAR COMPRA</button>
+            }
+                    
                 </div>
                 
                 
