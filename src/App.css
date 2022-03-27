@@ -8,6 +8,31 @@
   padding: 1rem;
 }
 
+.product-shipping__icon {
+  width: 50px;
+  height: 50px;
+}
+.product-shipping__free-info__title-icon, .product-shipping__dev-title__icon {
+  height: 12px;
+  width: 12px;
+}
+.product-intro__freeshipping-desc {
+  color: #767676;
+  font-size: 12px;
+}
+.product-shipping__free-info-title, .product-shipping__dev-title {
+  font-size: 13px;
+  font-weight: 700;
+}
+.accordion-button:not(.collapsed) {
+  color: #fff;
+  background-color: #CC3980;
+}
+
+.accordion-button:focus{
+  border-color: #CC3980;
+}
+
 .cont-product__descrip--cfg{
   margin-bottom: 2px;
   padding-top: 2px;
@@ -47,6 +72,31 @@
   text-align: center;
   margin: 1rem 0;
 }
+.product-shipping {
+  margin-top: 25px;
+  background-color: #f7f8fa;
+  border: 1px solid #ccc;
+}
+
+.btn--cfg {
+  width: 100%;
+  text-align: justify;
+}
+.product-shipping__free {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+.product-shipping__dev {
+  width: 100%;
+  padding: 0 20px 20px 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
 .footer__link--ico{
   width: auto;
   height: 100%;
@@ -55,6 +105,10 @@
   position: relative;
   cursor: pointer;
   vertical-align: bottom;
+}
+
+.footer__link--ico:hover{
+  fill: #CC3980;
 }
 .home {
   position: relative;
